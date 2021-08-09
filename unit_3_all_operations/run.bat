@@ -1,2 +1,2 @@
 mvn clean install
-java -jar ./target/Main.jar
+java -jar ./target/ua.com.alevel.Main.jar

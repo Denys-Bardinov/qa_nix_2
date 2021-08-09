@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.*;
 
 public class TaskThree {
-    public void run() throws IOException {
 
+    public void run() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Расписание окончания уроков");
         System.out.println("Введите номер урока (от 1 до 10):");

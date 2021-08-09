@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.*;
 
 public class TaskTwo {
-    public void run() throws IOException {
 
+    public void run() throws IOException {
         System.out.println("Подсчет количества символов");
         System.out.println("Введите любые символы");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

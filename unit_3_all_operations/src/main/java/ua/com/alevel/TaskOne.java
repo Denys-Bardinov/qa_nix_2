@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.*;
 
-
 public class TaskOne {
+
     public void run() throws IOException {
         System.out.println("Сумма введенных чисел");
         System.out.println("Введите любую строку содержащюю числа:");

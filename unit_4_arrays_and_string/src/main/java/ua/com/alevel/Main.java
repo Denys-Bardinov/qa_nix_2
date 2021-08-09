@@ -6,10 +6,13 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String b = scanner.nextLine();
         System.out.println(new ua.com.alevel.First().reverse(b));
+
+//        что тут делает неиспользуемый код ???
 
 //        Scanner scanner = new Scanner(System.in);
 //        String b = scanner.nextLine();
@@ -21,7 +24,5 @@ public class Main {
 //        int c = scanner.nextInt();
 //        int d = scanner.nextInt();
 //        System.out.println(new ua.com.alevel.Third().reverse(b,c,d));
-
-
     }
 }

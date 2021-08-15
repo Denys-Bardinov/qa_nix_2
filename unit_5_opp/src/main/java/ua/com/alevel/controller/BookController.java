@@ -1,16 +1,16 @@
 package ua.com.alevel.controller;
 
-import ua.com.alevel.entity.User;
-import ua.com.alevel.service.UserService;
+import ua.com.alevel.entity.Book;
+import ua.com.alevel.service.BookService;
 
+import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class UserController {
-
-    private UserService userService = new UserService();
+public class BookController {
+    private BookService bookService = new BookService();
 
     public void start() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -33,11 +33,11 @@ public class UserController {
 
     private void runNavigation() {
         System.out.println();
-        System.out.println("if you want create user, please enter 1");
-        System.out.println("if you want update user, please enter 2");
-        System.out.println("if you want delete user, please enter 3");
-        System.out.println("if you want findById user, please enter 4");
-        System.out.println("if you want findAll user, please enter 5");
+        System.out.println("if you want create book, please enter 1");
+        System.out.println("if you want update book, please enter 2");
+        System.out.println("if you want delete book, please enter 3");
+        System.out.println("if you want findById book, please enter 4");
+        System.out.println("if you want findAll book, please enter 5");
         System.out.println("if you want exit, please enter 0");
         System.out.println();
     }
@@ -54,70 +54,76 @@ public class UserController {
     }
 
     private void create(BufferedReader reader) {
-        System.out.println("UserController.create");
+        System.out.println("BookController.create");
         try {
-            System.out.println("Please, enter your name");
+            System.out.println("Please, enter book name");
             String name = reader.readLine();
-            System.out.println("Please, enter your age");
-            String ageString = reader.readLine();
-            int age = Integer.parseInt(ageString);
-            User user = new User();
-            user.setAge(age);
-            user.setName(name);
-            userService.create(user);
+            System.out.println("Please, enter book creation year");
+            String yearString = reader.readLine();
+            System.out.println("Please, enter comment");
+            String comment = reader.readLine();
+            int year = Integer.parseInt(yearString);
+            Book book = new Book();
+            book.setYear(year);
+            book.setName(name);
+            book.setComment(comment);
+            bookService.create(book);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
     }
 
     private void update(BufferedReader reader) {
-        System.out.println("UserController.update");
+        System.out.println("BookController.update");
         try {
             System.out.println("Please, enter id");
             String id = reader.readLine();
-            System.out.println("Please, enter your name");
+            System.out.println("Please, enter book name");
             String name = reader.readLine();
-            System.out.println("Please, enter your age");
-            String ageString = reader.readLine();
-            int age = Integer.parseInt(ageString);
-            User user = new User();
-            user.setId(id);
-            user.setAge(age);
-            user.setName(name);
-            userService.update(user);
+            System.out.println("Please, enter book year");
+            String yearString = reader.readLine();
+            System.out.println("Please, enter comment");
+            String comment = reader.readLine();
+            int year = Integer.parseInt(yearString);
+            Book book = new Book();
+            book.setId(id);
+            book.setYear(year);
+            book.setName(name);
+            book.setComment(comment);
+            bookService.update(book);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
     }
 
     private void delete(BufferedReader reader) {
-        System.out.println("UserController.delete");
+        System.out.println("BookController.delete");
         try {
             System.out.println("Please, enter id");
             String id = reader.readLine();
-            userService.delete(id);
+            bookService.delete(id);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
     }
 
     private void findById(BufferedReader reader) {
-        System.out.println("UserController.findById");
+        System.out.println("BookController.findById");
         try {
             System.out.println("Please, enter id");
             String id = reader.readLine();
-            User user = userService.findById(id);
-            System.out.println("user = " + user);
+            Book book = bookService.findById(id);
+            System.out.println("book = " + book);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
     }
 
     private void findAll(BufferedReader reader) {
-        System.out.println("UserController.findAll");
-        List<User> users = userService.findAll();
-        for (User user : users) {
-            System.out.println("user = " + user);
+        System.out.println("BookController.findAll");
+        List<Book> books = bookService.findAll();
+        for (Book book : books) {
+            System.out.println("book = " + book);
         }
     }
 }

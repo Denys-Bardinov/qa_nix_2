@@ -24,7 +24,7 @@ public class BookService {
 
     }
 
-    public List<Book> findAll() {
+    public Book[] findAll() {
         return dao.findAll();
     }
 }

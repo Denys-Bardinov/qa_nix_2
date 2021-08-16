@@ -7,6 +7,9 @@ import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.AbstractList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BookController {
@@ -121,9 +124,10 @@ public class BookController {
 
     private void findAll(BufferedReader reader) {
         System.out.println("BookController.findAll");
-        List<Book> books = bookService.findAll();
+        Book[] books = bookService.findAll();
         for (Book book : books) {
             System.out.println("book = " + book);
         }
     }
+
 }

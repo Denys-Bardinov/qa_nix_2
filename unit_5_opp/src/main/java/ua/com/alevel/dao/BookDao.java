@@ -24,7 +24,7 @@ public class BookDao {
 
     }
 
-    public List<Book> findAll() {
+    public Book[] findAll() {
         return db.findAll();
     }
 }

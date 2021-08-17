@@ -8,11 +8,11 @@ import java.util.List;
 public class BookDao {
     private BookDB db = new BookDB();
     public void create(Book book) {
-       db.create(book);
+        db.create(book);
     }
 
     public void update(Book book) {
-       db.update(book);
+        db.update(book);
     }
 
     public void delete(String id) {

@@ -3,8 +3,6 @@ package ua.com.alevel.service;
 import ua.com.alevel.dao.BookDao;
 import ua.com.alevel.entity.Book;
 
-import java.util.List;
-
 public class BookService {
     private BookDao dao = new BookDao();
     public void create(Book book) {

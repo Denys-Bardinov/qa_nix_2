@@ -8,18 +8,17 @@ import java.util.UUID;
 
 public class BookDB {
     private List<Book> books = new ArrayList<>();
-    private int size = 2;
-    private int size2 = 4;
+    private int size = 4;
+    private int size2 = 8;
     private Book[] booksArray = new Book[size];
     private Book[] booksArray2 = new Book[size2];
     int lenght = 0;
+    int index = -1;
 
-
-//System.arraycopy(src, low, dest, destLow, length);
 
     public void create(Book book) {
         book.setId(generateId());
-//        books.add(book);
+
 
         if (size > lenght) {
             booksArray[lenght] = book;
@@ -40,12 +39,30 @@ public class BookDB {
     }
 
     public void delete(String id) {
-//        books.removeIf(book -> book.getId().equals(id));
+        // books.removeIf(book -> book.getId().equals(id));
+        for (int i = 0; i < booksArray.length; i++) {
+            if (booksArray[i].getId().equals(id)) {
+                index = i;
+                break;
+            }
+        }
+        for (int j = index; j < booksArray.length - 1; j++) {
+            booksArray[j] = booksArray[j + 1];
+        }
+        booksArray[booksArray.length - 1] = null;
+
 
     }
 
+
     public Book findById(String id) {
-        return books.stream().filter(b -> b.getId().equals(id)).findFirst().get();
+        for (int i = 0; i < booksArray.length; i++) {
+
+            if (booksArray[i].getId().equals(id)) {
+                return booksArray[i];
+            }
+        }
+return books.stream().filter(b -> b.getId().equals(id)).findFirst().get();
 
     }
 
@@ -60,4 +77,6 @@ public class BookDB {
         }
         return id;
     }
+
+
 }

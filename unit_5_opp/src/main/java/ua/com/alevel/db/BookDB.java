@@ -56,15 +56,18 @@ public class BookDB {
 
 
     public Book findById(String id) {
+        Book result = null;
+        int ind = 0;
         for (int i = 0; i < booksArray.length; i++) {
-
             if (booksArray[i].getId().equals(id)) {
-                return booksArray[i];
+                ind = i;
+                break;
             }
         }
-return books.stream().filter(b -> b.getId().equals(id)).findFirst().get();
-
+        result = booksArray[ind];
+        return result;
     }
+
 
     public Book[] findAll() {
         return booksArray;

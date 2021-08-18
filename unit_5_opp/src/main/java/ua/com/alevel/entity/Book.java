@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class Book {
     private String id;
-    private String name;
-    private int year;
-    private String comment;
+    public String name;
+    public int year;
+    public String comment;
 }

@@ -3,8 +3,6 @@ package ua.com.alevel.dao;
 import ua.com.alevel.db.BookDB;
 import ua.com.alevel.entity.Book;
 
-import java.util.List;
-
 public class BookDao {
     private BookDB db = new BookDB();
     public void create(Book book) {

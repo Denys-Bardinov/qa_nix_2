@@ -2,12 +2,11 @@ package ua.com.alevel.db;
 
 import ua.com.alevel.entity.Book;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.UUID;
 
 public class BookDB {
-    private List<Book> books = new ArrayList<>();
+//    private List<Book> books = new ArrayList<>();
     private int size = 4;
     private int size2 = 8;
     private Book[] booksArray = new Book[size];
@@ -32,7 +31,7 @@ public class BookDB {
 
 
     public void update(Book book) {
-        Book current = books.stream().filter(b -> b.getId().equals(book.getId())).findFirst().get();
+        Book current = Arrays.stream(booksArray).filter(b -> b.getId().equals(book.getId())).findFirst().get();
         current.setName(book.getName());
         current.setYear(book.getYear());
         current.setComment(book.getComment());
@@ -75,11 +74,8 @@ public class BookDB {
 
     private String generateId() {
         String id = UUID.randomUUID().toString();
-        if (books.stream().anyMatch(book -> book.getId().equals(id))) {
-            return generateId();
-        }
+
         return id;
     }
-
 
 }

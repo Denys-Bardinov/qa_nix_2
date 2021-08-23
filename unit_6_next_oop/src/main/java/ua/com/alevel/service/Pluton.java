@@ -1,13 +1,16 @@
 package ua.com.alevel.service;
 
-public class Pluton implements Planet{
-    private String name = "pluton";
-    private double weight = 1;
-    private double radius = 2;
-    private static final double G = 6;
+public class Pluton extends BasePlanet implements Planet{
 
     @Override
     public String calculateAccelerationOfGravity() {
+        super.name = "Pluton";
+        System.out.println(name);
+        super.weight = 1;
+        super.radius =2;
+        super.G = 6;
         return String.valueOf(weight*radius*G);
     }
+
+
 }

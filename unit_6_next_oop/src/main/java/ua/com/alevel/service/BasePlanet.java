@@ -4,6 +4,6 @@ public abstract class BasePlanet {
     public String name;
     public double weight;
     public double radius;
-    public double G;
+    public double G = 6;
 
 }

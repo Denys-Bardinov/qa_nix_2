@@ -8,7 +8,6 @@ public class Earth extends BasePlanet implements Planet{
         System.out.println(name);
         super.weight = 1;
         super.radius =2;
-        super.G = 6;
         return String.valueOf(weight*radius*G);
     }
 

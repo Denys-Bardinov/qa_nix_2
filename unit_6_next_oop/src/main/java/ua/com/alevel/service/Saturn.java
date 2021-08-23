@@ -1,10 +1,10 @@
 package ua.com.alevel.service;
 
-public class Earth extends BasePlanet implements Planet{
+public class Saturn extends BasePlanet implements Planet{
 
     @Override
     public String calculateAccelerationOfGravity() {
-        super.name = "Earth";
+        super.name = "Saturn";
         System.out.println(name);
         super.weight = 1;
         super.radius =2;

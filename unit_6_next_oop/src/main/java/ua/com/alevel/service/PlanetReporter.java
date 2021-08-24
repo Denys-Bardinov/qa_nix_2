@@ -6,7 +6,7 @@ public class PlanetReporter {
 
     public static void printInfo(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите номер планеты");
+        System.out.println("Введите номер планеты:");
         System.out.println("Меркурий - 1");
         System.out.println("Венера - 2");
         System.out.println("Земля - 3");
@@ -15,6 +15,7 @@ public class PlanetReporter {
         System.out.println("Юпитер - 6");
         System.out.println("Уран - 7");
         System.out.println("Нептун - 8");
+        System.out.println("Выйти из программы - 9");
         String z = scanner.nextLine();
         if (z.equals("1")) {
             Mercury planet = new Mercury();
@@ -47,6 +48,9 @@ public class PlanetReporter {
         else if (z.equals("8")) {
             Neptune planet = new Neptune();
             System.out.println(planet.calculateAccelerationOfGravity());
+        }
+        else if (z.equals("9")){
+            return;
         }
         else {
             System.out.println("Вы ввели неверное число!");

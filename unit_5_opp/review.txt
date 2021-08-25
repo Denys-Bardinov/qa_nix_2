@@ -1,0 +1,8 @@
+    private Book[] booksArray = new Book[size];
+    private Book[] booksArray2 = new Book[size2];
+
+    вот вообще не понял, зачем это)
+
+    у тебя один массив и делаешь ему booksArray = Arrays.copyOf(booksArray, booksArray.length + 10);
+
+9 из 10

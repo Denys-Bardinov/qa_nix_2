@@ -1,9 +1,13 @@
 package ua.com.alevel.service;
 
+import java.math.BigDecimal;
+
 public abstract class BasePlanet {
+
+
     public String name;
-    public double weight;
-    public double radius;
-    public double G = 6;
+    public BigDecimal weight ;
+    public BigDecimal radius ;
+    BigDecimal G = new BigDecimal(6);
 
 }

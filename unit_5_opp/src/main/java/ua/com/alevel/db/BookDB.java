@@ -16,7 +16,7 @@ public class BookDB {
 
 
     public void create(Book book) {
-        book.setId(generateId());
+        book.setId(generateId(book));
 
 
         if (size > lenght) {
@@ -72,7 +72,7 @@ public class BookDB {
         return booksArray;
     }
 
-    private String generateId() {
+    private String generateId(Book book) {
         String id = UUID.randomUUID().toString();
 
         return id;

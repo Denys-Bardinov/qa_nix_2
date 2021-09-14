@@ -51,6 +51,7 @@ public class BookFacadeImpl implements BookFacade {
     public void createOrUpdate(BookRequestDto dto, String id) {
         Book book = new Book();
         book.setFirstname(dto.getFirstname());
+        book.setAuthorId(dto.getAuthorId());
         if (id == null) {
             bookService.create(book);
         } else {

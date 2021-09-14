@@ -1,5 +1,6 @@
 package ua.com.alevel.demo.dao;
 
+import ua.com.alevel.demo.entity.Author;
 import ua.com.alevel.demo.entity.Book;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.UUID;
 public abstract class AbstractBookDao {
 
     protected List<Book> books = new ArrayList<>();
+    protected List<Author> authors = new ArrayList<>();
 
     protected void createBook(Book book) {
         book.setId(generateId());
@@ -16,7 +18,7 @@ public abstract class AbstractBookDao {
     }
 
     protected void updateBook(Book book) {
-        if (existById(book.getId())) {
+        if (existById(book.getAuthorId())) {
             Book current = findBookById(book.getId());
             current.setId(book.getId());
             current.setFirstname(book.getFirstname());
@@ -46,7 +48,7 @@ public abstract class AbstractBookDao {
     }
 
     private boolean existById(String id) {
-        return books.stream().anyMatch(books -> books.getId().equals(id));
+        return authors.stream().anyMatch(authors -> authors.getId().equals(id));
     }
 
     public abstract Book findById(String id);

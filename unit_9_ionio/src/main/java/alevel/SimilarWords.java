@@ -3,10 +3,9 @@ package alevel;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class SimilarWords {
-    public String calculateSimilarWords() {
-        NewScan scan = new NewScan();
-        String scanSimilarWords = scan.returnScan();
+public class SimilarWords{
+    public String calculateSimilarWords(String scan) {
+        String scanSimilarWords = scan;
         scanSimilarWords = scanSimilarWords.replaceAll("\\. ", " ");
         String[] arraySimilarWords = scanSimilarWords.split(" ");
         String b = "";

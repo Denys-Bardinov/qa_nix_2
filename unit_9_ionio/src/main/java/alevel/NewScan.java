@@ -3,10 +3,13 @@ package alevel;
 import java.util.Scanner;
 
 public class NewScan {
-    public String scannerString;
-    public String returnScan() {
-        Scanner scanner = new Scanner(System.in);
-    this.scannerString = scanner.nextLine();
-    return scannerString;
+    String scanResult;
+
+    public String getScanResult() {
+        return scanResult;
+    }
+
+    public void setScanResult(String scanResult) {
+        this.scanResult = scanResult;
     }
 }

@@ -4,11 +4,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Polindrome {
+public class Polindrome{
 
-    public int calculatePolindrome() {
-        NewScan scan = new NewScan();
-        String scanStringInPolindrome = scan.returnScan();
+    public int calculatePolindrome(String scan) {
+        String scanStringInPolindrome = scan;
         scanStringInPolindrome = scanStringInPolindrome.replaceAll("\\. ", " ");
         int polindromeCounter = 0;
 

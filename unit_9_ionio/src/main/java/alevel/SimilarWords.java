@@ -1,8 +1,7 @@
 package alevel;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SimilarWords {
     public String calculateSimilarWords() {
@@ -25,12 +24,17 @@ public class SimilarWords {
                 values.put(arraySimilarWords[i], counter);
         }
 
-        Iterator it = values.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
-            b = (b + pair.getKey() + " = " + pair.getValue() + "\n");
-            it.remove();
-        }
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(values.entrySet());
+
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+                return e1.getValue() - e2.getValue();
+            }
+        }.reversed());
+        b = list.stream()
+                .map(n -> String.valueOf(n))
+                .collect(Collectors.joining("\n"));
         return b;
     }
 }

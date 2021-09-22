@@ -30,7 +30,7 @@ public class JsonBookDao extends AbstractBookDao implements BookDao, FileIOBook 
     @Override
     public void update(Book book) {
         loadBooks();
-        updateBook(book);
+//        updateBook(book);
         storeBooks();
     }
 

@@ -28,7 +28,7 @@ public class BookResponseDto {
     public BookResponseDto(Book book) {
         this.id = book.getId();
         this.name = book.getFirstname();
-        this.authorId = book.getAuthorId();
+//        this.authorId = book.getAuthorId();
     }
 
 

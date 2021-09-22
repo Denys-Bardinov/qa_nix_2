@@ -12,5 +12,6 @@ public enum FileType {
 
     public String getPath() {
         return path;
+
     }
 }

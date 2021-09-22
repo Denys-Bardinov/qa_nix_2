@@ -8,7 +8,7 @@ public class Polindrome{
 
     public int calculatePolindrome(String scan) {
         String scanStringInPolindrome = scan;
-        scanStringInPolindrome = scanStringInPolindrome.replaceAll("\\. ", " ");
+        scanStringInPolindrome = scanStringInPolindrome.replaceAll("\\W ", " ");
         int polindromeCounter = 0;
 
         String[] scanStringInPolindromeItemsArrray = scanStringInPolindrome.split(" ");

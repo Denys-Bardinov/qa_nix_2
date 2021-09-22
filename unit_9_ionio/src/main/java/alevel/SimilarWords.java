@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class SimilarWords{
     public String calculateSimilarWords(String scan) {
         String scanSimilarWords = scan;
-        scanSimilarWords = scanSimilarWords.replaceAll("\\. ", " ");
+        scanSimilarWords = scanSimilarWords.replaceAll("\\W", " ");
         String[] arraySimilarWords = scanSimilarWords.split(" ");
         String b = "";
         int counter;

@@ -1,7 +1,6 @@
 package ua.com.alevel.config;
 
 public class FileTypeBook {
-    package ua.com.alevel.demo.config;
 
     public enum FileType {
 

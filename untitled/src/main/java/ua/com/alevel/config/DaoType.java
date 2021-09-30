@@ -1,4 +1,4 @@
-package ua.com.alevel.demo.config;
+package ua.com.alevel.config;
 
 public enum DaoType {
 
